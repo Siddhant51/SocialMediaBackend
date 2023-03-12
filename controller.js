@@ -41,6 +41,7 @@ const Register = async (req, res) => {
     console.log({ error });
   }
 };
+
 const Pitcure = async (req, res) => {
   const { userId, profilePic } = req.body;
 
@@ -66,7 +67,6 @@ const Create = async (req, res) => {
       const post = new Post({ content, media, user: userId });
       await post.save();
       res.send({ message: "Posted successfully" });
-      res.send({ post });
     }
   } catch (error) {
     console.log({ error });
